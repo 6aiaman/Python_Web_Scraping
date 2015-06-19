@@ -8,7 +8,7 @@ soup = BeautifulSoup(urlopen(base_url).read())
 posts = soup.find_all("p", "row")
 post_urls = [p.a["href"] for p in posts]
 
-with open("posts.xlsx", "w") as f:
+with open("posts.tsv", "w") as f:
     fieldnames = ("lat", "lng", "price")
     output = csv.writer(f, delimiter="\t")
     output.writerow(fieldnames)
